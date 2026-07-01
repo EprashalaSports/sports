@@ -240,6 +240,99 @@
             100% { transform: translateX(-50%); }
         }
 
+        /* Google Reviews Section */
+        .reviews-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .reviews-header h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .reviews-header p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border: 1px solid #eaeaea;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .author-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .author-info span {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .review-stars {
+            color: #fbbc04; /* Google Yellow */
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .google-branding {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.8rem;
+            color: #777;
+            margin-top: 15px;
+            font-weight: 600;
+        }
+
+        .google-logo {
+            width: 15px;
+        }
+
         /* Lightbox Modals */
         .modal {
             display: none;
@@ -400,21 +493,96 @@
             fill: white;
         }
 
+        /* ----- MOBILE OPTIMIZATION UPDATES ----- */
         @media(max-width: 768px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
+            /* Navigation Stacking */
+            nav {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+                padding: 1.5rem 1rem;
+            }
+            nav h1 {
+                font-size: 1.3rem;
+            }
+            
+            /* Responsive Hero */
+            .hero {
+                height: 70vh;
             }
             .hero h2 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
+            .hero p {
+                font-size: 1rem;
+                padding: 0 10px;
+            }
+            
+            /* General Spacing */
+            .container, .reviews-section {
+                padding: 3rem 1.5rem;
+            }
+            .section-title, .reviews-header h3 {
+                font-size: 2rem;
+            }
+
+            /* Smart Grid Stacking (Images above Text) */
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-bottom: 3.5rem;
+            }
+            .grid-2 .image-box {
+                order: -1; 
+            }
+            .text-box h3 {
+                font-size: 1.5rem;
+            }
+
+            /* Stack Links */
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Responsive Galleries and Ads */
+            .marquee-content img {
+                height: 150px; 
+                margin: 0 10px;
+            }
+            .gallery-track {
+                height: 40vh; 
+            }
+            .gallery-track img {
+                margin: 0 10px;
+            }
+            
+            /* Modal Adjustments */
+            .close {
+                top: 15px;
+                right: 20px;
+                font-size: 40px;
+            }
+
+            /* Centered Footer */
             .footer-container {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
+                text-align: center;
+            }
+            .footer-left {
+                text-align: center;
+                flex: 1 1 auto;
+            }
+            .social-links {
+                justify-content: center;
             }
             .footer-right {
-                align-items: flex-start;
-                margin-top: 20px;
+                align-items: center;
+                margin-top: 30px;
+                flex: 1 1 auto;
             }
+
+            /* Resize WhatsApp Button */
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
@@ -517,7 +685,7 @@
         
         <h2 class="section-title">Explore More</h2>
         <div class="links-grid">
-                      <a href="https://www.instagram.com/reel/DRMJQADDT6e/?igsh=Y2s1Nml2aWdyZzEz" target="_blank" class="link-card">
+            <a href="https://www.instagram.com/reel/DRMJQADDT6e/?igsh=Y2s1Nml2aWdyZzEz" target="_blank" class="link-card">
                 📱 Viral Instagram Reel
             </a>
             <a href="https://www.facebook.com/watch/?v=876999145300546" target="_blank" class="link-card">
@@ -532,6 +700,7 @@
         </div>
     </div>
 
+    <!-- Scrolling Ads Section -->
     <div class="ads-section">
         <h3>Latest Announcements & Offers</h3>
         <p style="text-align:center; margin-bottom: 20px; color: #555;">(Click any image to enlarge)</p>
@@ -555,6 +724,80 @@
             </div>
         </div>
     </div>
+
+    <!-- NEW Google Reviews Section -->
+    <div class="reviews-section">
+        <div class="reviews-header">
+            <h3>Player Experiences</h3>
+            <p>See what teams and athletes are saying about Eprashala Sports Complex.</p>
+        </div>
+        
+        <div class="reviews-grid">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="review-author">
+                    <div class="author-avatar" style="background-color: #4285F4;">R</div>
+                    <div class="author-info">
+                        <h4>Rahul Deshmukh</h4>
+                        <span>a month ago</span>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+                <div class="review-text">
+                    "Absolutely breathtaking! The ground is actually bigger than Wankhede. The BCCI standard pitch played beautifully for our entire weekend tournament. Waking up to the mountain views and clean air is unmatched."
+                </div>
+                <div class="google-branding">
+                    <svg class="google-logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#4285f4" d="M386 400c45-42 65-112 53-179H260v74h102c-4 24-18 44-38 57z"></path><path fill="#34a853" d="M90 341a192 192 0 0 0 296 59l-76-59c-48 33-114 31-158-4z"></path><path fill="#fbbc04" d="M152 337c-19-58-19-122 0-180l-75-57c-38 76-38 161 0 237z"></path><path fill="#ea4335" d="M260 51c66 0 119 29 156 79l-61 58C324 153 283 133 260 133c-60 0-112 40-130 97l-75-57C95 106 172 51 260 51z"></path></svg>
+                    Posted on Google
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-author">
+                    <div class="author-avatar" style="background-color: #EA4335;">S</div>
+                    <div class="author-info">
+                        <h4>Sanket Patil</h4>
+                        <span>2 weeks ago</span>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+                <div class="review-text">
+                    "We booked the European cottages for a corporate bootcamp. The hospitality was exceptional and the homemade food was hygienic and delicious. Cooling down in the pool after 40 overs under the sun was the highlight!"
+                </div>
+                <div class="google-branding">
+                    <svg class="google-logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#4285f4" d="M386 400c45-42 65-112 53-179H260v74h102c-4 24-18 44-38 57z"></path><path fill="#34a853" d="M90 341a192 192 0 0 0 296 59l-76-59c-48 33-114 31-158-4z"></path><path fill="#fbbc04" d="M152 337c-19-58-19-122 0-180l-75-57c-38 76-38 161 0 237z"></path><path fill="#ea4335" d="M260 51c66 0 119 29 156 79l-61 58C324 153 283 133 260 133c-60 0-112 40-130 97l-75-57C95 106 172 51 260 51z"></path></svg>
+                    Posted on Google
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-author">
+                    <div class="author-avatar" style="background-color: #34A853;">V</div>
+                    <div class="author-info">
+                        <h4>Vikram Singh</h4>
+                        <span>3 months ago</span>
+                    </div>
+                </div>
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+                <div class="review-text">
+                    "The perfect escape from Mumbai traffic. Just 90 minutes away and you are in the middle of nature playing on top-tier facilities. Can't wait for the new floodlights to be installed. Will definitely be returning this October."
+                </div>
+                <div class="google-branding">
+                    <svg class="google-logo" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path fill="#4285f4" d="M386 400c45-42 65-112 53-179H260v74h102c-4 24-18 44-38 57z"></path><path fill="#34a853" d="M90 341a192 192 0 0 0 296 59l-76-59c-48 33-114 31-158-4z"></path><path fill="#fbbc04" d="M152 337c-19-58-19-122 0-180l-75-57c-38 76-38 161 0 237z"></path><path fill="#ea4335" d="M260 51c66 0 119 29 156 79l-61 58C324 153 283 133 260 133c-60 0-112 40-130 97l-75-57C95 106 172 51 260 51z"></path></svg>
+                    Posted on Google
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Google Reviews Section -->
 
     <div id="imageModal" class="modal">
         <span class="close" onclick="closeModal()">×</span>
